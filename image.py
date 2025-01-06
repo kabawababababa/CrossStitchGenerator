@@ -9,4 +9,4 @@ def get_pixel_layer(image): return image.load()
 
 def resize_image(image, newX, newY): return ImageOps.contain(image, (int(newX), int(newY)))
 
-
+def save_image(filepath): return Image.save()

@@ -9,6 +9,7 @@ def crossStitchParser():
     parser = argparse.ArgumentParser(description="Generate a cross stitch pattern from any image!")
     
     parser.add_argument('filepath', type=str, help='full file path to your image file')
+    parser.add_argument('modifiedfilepath', type=str, help='the new filepath to save your resized file')
     parser.add_argument('y', type=int, help='the number of desired pixels on the y axis')
     parser.add_argument('x', type=int, help = 'the number of desired pixels on the x axis')
     return parser
@@ -26,3 +27,4 @@ if __name__ == "__main__":
     resized_image = image.resize_image(original_image, args.x, args.y)
     pixel_layer = image.get_pixel_layer(resized_image)
     
+    resized_image.save(args.modifiedfilepath)
