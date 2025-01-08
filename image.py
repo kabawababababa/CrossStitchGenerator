@@ -1,6 +1,9 @@
 from PIL import Image, ImageOps
-from colors import COLOR_MAPPING
+from colors import ColorMap
 class StitchImage: 
+    colorMap = ColorMap()
+    simpleColorMap = colorMap.get_simple_map()
+
     def __init__ (self, filepath):
         self.originalImage = Image.open(filepath)
         self.currentImage = self.originalImage
@@ -8,7 +11,7 @@ class StitchImage:
         self.pixel_layer = self.originalImage.load()
         self.originalWidth = self.originalImage.size[0]
         self.originalHeight = self.originalImage.size[1]
-
+        
 
     def load_image(filepath): return Image.open(filepath) 
 
@@ -37,6 +40,7 @@ class StitchImage:
             for w in range(self.originalWidth): 
                 #do color map things 
                 dummy_count += 1 #does nothing, just for testing
+        # print(f"Color map is accessible: {self.simpleColorMap}")
 
     #saves the current state of the image
     def save_image(self,filepath): return self.currentImage.save(filepath)

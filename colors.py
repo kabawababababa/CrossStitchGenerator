@@ -452,3 +452,10 @@ COLOR_MAPPING=[{"Floss": "3713", "DMC Name": "Salmon Very Light", "R": 255, "G":
 {"Floss": "413", "DMC Name": "Pewter Gray Dark", "R": 86, "G": 86, "B": 86, "Hex": "565656"},
 {"Floss": "3799", "DMC Name": "Pewter Gray Vy Dk", "R": 66, "G": 66, "B": 66, "Hex": "424242"},
 {"Floss": "310", "DMC Name": "Black", "R": 0, "G": 0, "B": 0, "Hex": "0"},]
+
+class ColorMap: 
+    def __init__ (self):
+        self.full_map = COLOR_MAPPING
+        self.simple_map = [(i["R"], i["G"], i["B"]) for i in self.full_map]
+    
+    def get_simple_map(self): return self.simple_map

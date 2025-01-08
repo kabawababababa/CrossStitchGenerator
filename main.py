@@ -2,6 +2,7 @@ import argparse
 import cleanup
 import os
 from image import StitchImage
+from colors import ColorMap
 # use this to test: python main.py sskaeeoh_tshirt.png 400 500 
 
 def crossStitchParser(): 
@@ -34,7 +35,7 @@ if __name__ == "__main__":
 
     myImage.map_pixels()
 
-
+    
     os.makedirs("build", exist_ok=True)
     
     outputfile = "build/" + args.newfilename
