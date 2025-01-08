@@ -31,7 +31,9 @@ if __name__ == "__main__":
     
     myImage = StitchImage(args.filepath)
     myImage.resize_image(args.x, args.y)
-    pixel_layer = myImage.get_pixel_layer()
+
+    myImage.map_pixels()
+
 
     os.makedirs("build", exist_ok=True)
     
