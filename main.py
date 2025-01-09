@@ -33,11 +33,10 @@ if __name__ == "__main__":
     myImage = StitchImage(args.filepath)
     myImage.resize_image(args.x, args.y)
 
-    myImage.map_pixels()
+    myImage = myImage.map_pixels()
 
     
     os.makedirs("build", exist_ok=True)
     
     outputfile = "build/" + args.newfilename
-    
-    myImage.save_image(outputfile)
+    myImage.save(outputfile)

@@ -458,4 +458,4 @@ class ColorMap:
         self.full_map = COLOR_MAPPING
         self.simple_map = [(i["R"], i["G"], i["B"]) for i in self.full_map]
     
-    def get_simple_map(self): return self.simple_map
+    def get_simple_map(self): return sorted(self.simple_map)
